@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Instaderm</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="country_array">
+        <item>United States</item>
+        <item>Canada</item>
+    </string-array>
+
+
 </resources>
