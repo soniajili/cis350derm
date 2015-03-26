@@ -15,7 +15,7 @@ public class HomeActivity extends ActionBarActivity {
     Button submitButton;
     Button viewCollectionButton;
     Button searchButton;
-    Button logoutButton;
+    //Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class HomeActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
+/*
         logoutButton = (Button) findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +63,7 @@ public class HomeActivity extends ActionBarActivity {
                 Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 
