@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Instaderm</string>
+    <string name="title_activity_view_only_home">ViewOnlyHomeActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_submit">SubmitActivity</string>
+    <string name="title_activity_collection">CollectionActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
 </resources>
