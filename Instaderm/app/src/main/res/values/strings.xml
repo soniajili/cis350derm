@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Instaderm</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="country_array">
+        <item>United States</item>
+        <item>Canada</item>
+    </string-array>
+
     <string name="title_activity_view_only_home">ViewOnlyHomeActivity</string>
 
     <string name="hello_world">Hello world!</string>
@@ -9,5 +20,13 @@
     <string name="title_activity_collection">View Collection</string>
     <string name="title_activity_search">Search Cases</string>
     <string name="title_activity_disclaimer">Disclaimer</string>
-    <string name="disclaimer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel nisl et nisi convallis ultricies ac eget nulla. Integer a magna orci. Nulla malesuada ligula erat, a sagittis elit dictum sit amet. Ut turpis libero, rhoncus in lorem ac, fermentum efficitur massa. Sed pulvinar nibh eget nunc blandit dignissim. Pellentesque ut aliquet orci. Mauris consectetur ante sed dui aliquet mollis. Sed auctor urna a lorem cursus, nec accumsan ante feugiat. Vivamus quis risus vestibulum turpis consectetur luctus eu nec velit. Donec vulputate nibh in ligula accumsan ultrices. Nam blandit mauris eget justo maximus pharetra ut nec tellus. Aenean porttitor eros.</string>
+    <string name="disclaimer_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Morbi vel nisl et nisi convallis ultricies ac eget nulla. Integer a magna orci.
+        Nulla malesuada ligula erat, a sagittis elit dictum sit amet. Ut turpis libero,
+        rhoncus in lorem ac, fermentum efficitur massa. Sed pulvinar nibh eget nunc blandit
+        dignissim. Pellentesque ut aliquet orci. Mauris consectetur ante sed dui aliquet mollis.
+        Sed auctor urna a lorem cursus, nec accumsan ante feugiat. Vivamus quis risus vestibulum
+        turpis consectetur luctus eu nec velit. Donec vulputate nibh in ligula accumsan ultrices.
+        Nam blandit mauris eget justo maximus pharetra ut nec tellus. Aenean porttitor eros.
+    </string>
    </resources>
