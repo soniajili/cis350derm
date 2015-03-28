@@ -43,6 +43,13 @@
                       android:layout_height="wrap_content"
                       android:textColor="#372c24"
                       android:text="Full Name"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:layout_gravity="center_horizontal"/>
+
             <EditText android:id="@+id/reg_fullname"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
