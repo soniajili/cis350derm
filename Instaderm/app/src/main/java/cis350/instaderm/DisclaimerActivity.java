@@ -1,17 +1,37 @@
 package cis350.instaderm;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 public class DisclaimerActivity extends ActionBarActivity {
+
+    CheckBox checkbox;
+    OnClickListener checkBoxListener;
+    Button disclaimerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_disclaimer);
+        checkbox = (CheckBox) findViewById(R.id.disclaimerCheckBox);
+        disclaimerButton = (Button) findViewById(R.id.disclaimerButton);
+        disclaimerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -35,5 +55,15 @@ public class DisclaimerActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+
+        if (checkbox.isChecked()) {
+            disclaimerButton.setEnabled(true);
+        } else {
+            disclaimerButton.setEnabled(false);
+        }
     }
 }
