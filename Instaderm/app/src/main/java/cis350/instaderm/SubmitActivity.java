@@ -71,17 +71,31 @@ public class SubmitActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.homePage:
+                goHome();
+                return true;
+            case R.id.search:
+                goToSearch();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    /** MAKE SURE TO USE IF STATEMENT TO DECIDE WHICH HOME PAGE TO GO TO */
+    private void goHome() {
+        /*
+        setContentView(R.layout.activity_home);*/
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToSearch() {
+      //  setContentView(R.layout.activity_search);
+        Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(intent);
     }
 
     /** Helper method to determine if device has a camera */
