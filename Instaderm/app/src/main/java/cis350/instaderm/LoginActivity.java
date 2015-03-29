@@ -90,7 +90,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "fviaFJ9B1jQdWCCnS419jkZ8dFVquHBd1lu0Y1jF", "p6dYSbB0KVF7KPvstO2ui7B32RanUEj9vmS28DLi");
-
     }
 
     private void populateAutoComplete() {
