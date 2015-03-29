@@ -25,6 +25,7 @@ public class DisclaimerActivity extends ActionBarActivity {
         setContentView(R.layout.activity_disclaimer);
         checkbox = (CheckBox) findViewById(R.id.disclaimerCheckBox);
         disclaimerButton = (Button) findViewById(R.id.disclaimerButton);
+        disclaimerButton.setEnabled(false);
         disclaimerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

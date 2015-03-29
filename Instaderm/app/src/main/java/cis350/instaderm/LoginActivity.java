@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -80,7 +81,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                //TODO: FIGURE OUT REGISTRATION
+               // attemptLogin();
+                Intent intent = new Intent(getApplicationContext(), RegistrationActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -88,8 +92,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mProgressView = findViewById(R.id.login_progress);
 
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "fviaFJ9B1jQdWCCnS419jkZ8dFVquHBd1lu0Y1jF", "p6dYSbB0KVF7KPvstO2ui7B32RanUEj9vmS28DLi");
+       /* Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "fviaFJ9B1jQdWCCnS419jkZ8dFVquHBd1lu0Y1jF", "p6dYSbB0KVF7KPvstO2ui7B32RanUEj9vmS28DLi");*/
     }
 
     private void populateAutoComplete() {

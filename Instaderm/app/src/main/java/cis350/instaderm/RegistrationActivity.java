@@ -1,5 +1,6 @@
 package cis350.instaderm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -44,6 +45,16 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
                 R.array.setting_array, android.R.layout.simple_spinner_item);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         practiceSettingSelection.setAdapter(settingAdapter);
+
+        register = (Button) findViewById(R.id.registerButton);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DisclaimerActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -55,15 +66,11 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
         RadioButton submissionButton = (RadioButton) findViewById(R.id.submissionUser);
 
         if (viewButton.isChecked()) {
-            // EDIT THIS LATER
-            String temp = "THE CLICK WORKED";
-            Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
+            // TODO: EDIT THIS LATER
             viewButton.setChecked(true);
             submissionButton.setChecked(false);
         } else {
-            // EDIT THIS LATER
-            String temp = "THE CLICK WORKED";
-            Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
+            // TODO: EDIT THIS LATER
             submissionButton.setChecked(true);
             viewButton.setChecked(false);
         }
