@@ -1,5 +1,6 @@
 package cis350.instaderm;
 
+import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,7 +16,7 @@ public class HomeActivity extends ActionBarActivity {
     Button submitButton;
     Button viewCollectionButton;
     Button searchButton;
-    //Button logoutButton;
+    Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,6 @@ public class HomeActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SubmitActivity.class);
-                String temp = "THE CLICK WORKED";
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
@@ -37,8 +36,6 @@ public class HomeActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CollectionActivity.class);
-                String temp = "THE CLICK WORKED";
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
@@ -48,22 +45,18 @@ public class HomeActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                String temp = "THE CLICK WORKED";
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });
-/*
+
         logoutButton = (Button) findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                String temp = "THE CLICK WORKED";
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
 
