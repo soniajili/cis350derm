@@ -11,6 +11,9 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 /**
  * Created by Sonia on 3/18/15.
  */
@@ -33,7 +36,8 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
         genderSelection.setAdapter(genderAdapter);
 
         // Add country information
-        AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_country);
+        // TODO: Ensure that final doesn't limit the capabilities of textView
+        final AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.autocomplete_country);
         String[] countries = getResources().getStringArray(R.array.country_array);
         ArrayAdapter<String> countryAdapter =
                 new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
@@ -50,6 +54,25 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                ParseObject newuser = new ParseObject("derpyderm"); // TODO: FIGURE OUT OBJECT NAMES
+                newuser.put("Gender", genderSelection.getSelectedItem().toString());
+                newuser.put("Country", textView.getText().toString()); //TODO: ASK ABOUT RETRIEVING COUNTRY INFO
+                newuser.put("Setting", practiceSettingSelection.getSelectedItem().toString());
+
+                newuser.saveInBackground();
+
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("derpyderm");
+                //query.getInBackground("xWMyZ4YEGZ", new GetCallback<ParseObject>() { //TODO: ADJUST THESE
+                  //  public void done(ParseObject object, ParseException e) {
+                    //    if (e == null) {
+                            // object will be your game score
+                      //  } else {
+                            // something went wrong
+                        //}
+                //    }
+                //});
+
                 Intent intent = new Intent(getApplicationContext(), DisclaimerActivity.class);
                 startActivity(intent);
 
@@ -76,4 +99,6 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
         }
 
     }
+
+
 }

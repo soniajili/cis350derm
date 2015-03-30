@@ -135,6 +135,15 @@
                 />
             <!-- Type of User -->
             <TextView
+                android:id="@+id/submissionUserDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#545454"
+                android:textSize="15dp"
+                android:text="@string/submissionDescription"
+                />
+
+            <TextView
                 android:id="@+id/userType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -149,14 +158,6 @@
                 android:textColor="#545454"
                 android:textSize="15dp"
                 android:text="@string/viewDescription"
-                />
-            <TextView
-                android:id="@+id/submissionUserDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#545454"
-                android:textSize="15dp"
-                android:text="@string/submissionDescription"
                 />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
