@@ -3,16 +3,23 @@ package cis350.instaderm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.text.ParseException;
 
 /**
  * Created by Sonia on 3/18/15.
@@ -27,6 +34,13 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        //initialize Parse
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "fviaFJ9B1jQdWCCnS419jkZ8dFVquHBd1lu0Y1jF", "p6dYSbB0KVF7KPvstO2ui7B32RanUEj9vmS28DLi");
+
+
+        //Get email information
+        final EditText email = (EditText) findViewById(R.id.emailLabel);
 
         // Add gender information
         genderSelection = (Spinner) findViewById(R.id.gender_spinner);
@@ -55,23 +69,24 @@ public class RegistrationActivity extends ActionBarActivity implements View.OnCl
             @Override
             public void onClick(View v) {
 
-                ParseObject newuser = new ParseObject("derpyderm"); // TODO: FIGURE OUT OBJECT NAMES
+
+                ParseObject testObject = new ParseObject("TestObject");
+                testObject.put("foo", "bar");
+                testObject.saveInBackground();
+
+
+                String username = email.getText().toString();
+
+
+                ParseObject newuser = new ParseObject(username); // TODO: FIGURE OUT OBJECT NAMES
+
                 newuser.put("Gender", genderSelection.getSelectedItem().toString());
                 newuser.put("Country", textView.getText().toString()); //TODO: ASK ABOUT RETRIEVING COUNTRY INFO
                 newuser.put("Setting", practiceSettingSelection.getSelectedItem().toString());
 
                 newuser.saveInBackground();
 
-                ParseQuery<ParseObject> query = ParseQuery.getQuery("derpyderm");
-                //query.getInBackground("xWMyZ4YEGZ", new GetCallback<ParseObject>() { //TODO: ADJUST THESE
-                  //  public void done(ParseObject object, ParseException e) {
-                    //    if (e == null) {
-                            // object will be your game score
-                      //  } else {
-                            // something went wrong
-                        //}
-                //    }
-                //});
+                String objectId = newuser.getObjectId();
 
                 Intent intent = new Intent(getApplicationContext(), DisclaimerActivity.class);
                 startActivity(intent);

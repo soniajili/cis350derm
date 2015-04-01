@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -59,6 +62,8 @@ public class SubmitActivity extends ActionBarActivity {
                 startActivityForResult(intent, CHOOSE_IMAGE_ACTIVITY_REQUEST_CODE);
             }
         });
+
+
     }
 
 
